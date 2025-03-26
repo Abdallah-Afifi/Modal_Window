@@ -1,19 +1,22 @@
 var modal = document.getElementById('modal');
 
-var button = document.getElementById('button');
+var buttonO = document.getElementById('button');
 
-var span = document.getElementsByClassName('close')[0];
+var buttonC = document.getElementsByClassName('close')[0];
 
-button.onclick = function() {
+buttonO.onclick = function() {
     modal.style.display = 'block';
-    }
+    modal.setAttribute('aria-hidden', 'false');
+}
 
-span.onclick = function() {
+buttonC.onclick = function() {
     modal.style.display = 'none';
-    }
+    modal.setAttribute('aria-hidden', 'true');
+}
 
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = 'none';
+        modal.setAttribute('aria-hidden', 'true');
     }
 }
